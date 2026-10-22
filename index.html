@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VERGARA, Laurence F.</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ALIEN DEFENSE SCOREBOARD -->
+  <div class="game-hud">
+    <div class="hud-item">
+      <span class="hud-label">👾 Killed</span>
+      <span id="killScore" class="hud-value">0</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">🌍 Invaded</span>
+      <span id="invadedScore" class="hud-value" style="color: #ef4444;">0</span>
+    </div>
+  </div>
+
+  <!-- STARFIELD BACKGROUND -->
+  <canvas id="stars"></canvas>
+
+  <!-- HEADER -->
+  <header class="hero">
+    <h1>Welcome to My Universe</h1>
+    <p>Click a planet to explore a part of me ✦</p>
+    <p class="alien-hint">👾 Tap the aliens to defend the Earth!</p>
+  </header>
+
+  <!-- SOLAR SYSTEM -->
+  <div class="solar-system">
+
+    <!-- SUN (You) -->
+    <div class="sun" data-target="sun">
+      <span class="label">About Me</span>
+    </div>
+
+    <!-- MERCURY — Family -->
+    <div class="orbit orbit-1">
+      <div class="planet mercury" data-target="family">
+        <span class="label">Family</span>
+      </div>
+    </div>
+
+    <!-- VENUS — Personality -->
+    <div class="orbit orbit-2">
+      <div class="planet venus" data-target="about">
+        <span class="label">Personality</span>
+      </div>
+    </div>
+
+    <!-- EARTH — Hobbies -->
+    <div class="orbit orbit-3">
+      <div class="planet earth" data-target="hobbies">
+        <span class="label">Hobbies</span>
+      </div>
+    </div>
+
+    <!-- MARS — Favorites -->
+    <div class="orbit orbit-4">
+      <div class="planet mars" data-target="favorites">
+        <span class="label">Favorites</span>
+      </div>
+    </div>
+
+    <!-- ASTEROID BELT (between Mars and Jupiter) -->
+    <div class="asteroid-belt" id="asteroidBelt"></div>
+
+    <!-- JUPITER — Fun Facts -->
+    <div class="orbit orbit-5">
+      <div class="planet jupiter" data-target="facts">
+        <span class="label">Fun Facts</span>
+      </div>
+    </div>
+
+    <!-- SATURN — Skills -->
+    <div class="orbit orbit-6">
+      <div class="planet saturn" data-target="skills">
+        <div class="ring"></div>
+        <span class="label">Skills</span>
+      </div>
+    </div>
+
+    <!-- URANUS — Dreams -->
+    <div class="orbit orbit-7">
+      <div class="planet uranus" data-target="dreams">
+        <div class="ring"></div>
+        <span class="label">Dreams</span>
+      </div>
+    </div>
+
+    <!-- NEPTUNE — Design Process -->
+    <div class="orbit orbit-8">
+      <div class="planet neptune" data-target="process">
+        <span class="label">Process</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <button class="close-btn" id="closeBtn">✕</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>2026 © presented by Laurence F. Vergara | All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
