@@ -1649,16 +1649,25 @@ body.modal-open .game-hud {
 /* ============================
    CONSTELLATION CURSOR TRAIL
 ============================ */
-.cursor-star {
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  background: #7dd3fc;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  box-shadow: 0 0 8px #7dd3fc;
-  animation: fadeOutStar 0.8s ease-out forwards;
+let lastStarTime = 0;
+document.addEventListener('mousemove', (e) => {
+  const now = Date.now();
+  if (now - lastStarTime > 30) {
+    createCursorStar(e.clientX, e.clientY);
+    lastStarTime = now;
+  }
+});
+
+function createCursorStar(x, y) {
+  const star = document.createElement('div');
+  star.className = 'cursor-star';
+  star.style.left = x + 'px';
+  star.style.top = y + 'px';
+  document.body.appendChild(star);
+  
+  setTimeout(() => {
+    if (star.parentNode) star.remove();
+  }, 800);
 }
 
 @keyframes fadeOutStar {
